@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(243, 214, 176);
+        }
+        .header{
+            margin-left: 500px;
+            margin-top:30px;
+            font-family: 'Lucida Sans';
+        }
+        #div1{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background:url('./img/rock.png') no-repeat center center/cover; ;
+            margin-right: 40px;
+            margin-left:15%;
+            margin-top:100px;
+            border-radius: 50%;
+            padding:20px;
+            cursor: pointer;
+        }
+        #div2{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background: url('./img/paper.png') no-repeat center center/cover;;
+            margin-right: 40px;
+            margin-left:5%;
+            margin-top:100px;
+            border-radius: 50%;
+            padding:20px;
+            cursor:pointer;
+        }
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: url('./img/scissors.jfif') no-repeat center center/cover;
+            float: left;
+            margin-right: 40px;
+            margin-left:5%;
+            margin-top:100px;
+            border-radius: 50%;
+            padding:20px;
+            cursor: pointer;
+        }
+        #paragrafet{
+            float: left;
+            margin-left: 20%;
+            margin-top: 30px;
+            font-family: 'Lucida Sans';
+        }
+        #p3{
+            font-size:26px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Rock Paper Scissors</h1>
+
+    
+    <div id="div1"class="rock"onclick="funksioni1()">
+        
+    </div>
+    <div id="div2"class="paper"onclick="funksioni2()">
+        
+    </div>
+    <div id="div3"class="scissors"onclick="funksioni3()">
+    </div>
+    <br><br>
+    <div id="paragrafet">   
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    </div>
+ 
+    <script>
+        const vektor=['rock','paper','scissors'];
+
+        function funksioni1(){
+            const divi1=document.getElementById('div1').className;
+            document.getElementById('p1').innerHTML="Your choice: "+divi1;
+            const random = Math.floor(Math.random() * vektor.length);
+            document.getElementById('p2').innerHTML="Pc choice: "+vektor[random];
+
+            if (vektor[random] == divi1){
+                document.getElementById('p3').innerHTML="Te njejta";
+                document.getElementById('p3').style.color="coral";
+            }
+            else if(vektor[random]=='paper'){
+                document.getElementById('p3').innerHTML="Humbe";
+                document.getElementById('p3').style.color="red";
+            }
+            else if(vektor[random]=='scissors'){
+                document.getElementById('p3').innerHTML="Fitove";
+                document.getElementById('p3').style.color="blue";
+               
+            }
+        }
+        
+        function funksioni2(){
+           const divi2=document.getElementById('div2').className;
+           document.getElementById('p1').innerHTML="Your choice: "+divi2;
+           const random = Math.floor(Math.random() * vektor.length);
+            document.getElementById('p2').innerHTML="Pc choice: "+vektor[random];
+            
+            if(vektor[random]==divi2){
+                document.getElementById('p3').innerHTML="Te njejta";
+                document.getElementById('p3').style.color="coral";
+            }
+            else if(vektor[random]=='scissors'){
+                document.getElementById('p3').innerHTML="Humbe";
+                document.getElementById('p3').style.color="red";
+            }
+            else if(vektor[random]=='rock'){
+                document.getElementById('p3').innerHTML="Fitove"
+                document.getElementById('p3').style.color="blue";
+            }
+       }
+       
+       function funksioni3(){
+           const divi3=document.getElementById('div3').className;
+           document.getElementById('p1').innerHTML="Your choice: "+divi3;
+           const random = Math.floor(Math.random() * vektor.length);
+            document.getElementById('p2').innerHTML="Pc choice: "+vektor[random];
+
+            if(vektor[random]==divi3){
+                document.getElementById('p3').innerHTML="Te njejta";
+                document.getElementById('p3').style.color="coral";
+            }
+            else if(vektor[random]=='paper'){
+                document.getElementById('p3').innerHTML="Fitove";
+                document.getElementById('p3').style.color="blue";
+            }
+            else if(vektor[random]=='rock'){
+                document.getElementById('p3').innerHTML="humbe";
+                document.getElementById('p3').style.color="red";
+            }
+       }
+    </script>
+</body>
+</html>
